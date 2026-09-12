@@ -8487,6 +8487,12 @@ function openGame(id){
   $('#games-count').textContent = fa(GAMES.length)+' بازی';
 })();
 
+// --- دیپ‌لینک از ربات تلگرام: ?game=ludo ---
+try{
+  const gq=new URLSearchParams(location.search).get('game');
+  if(gq&&GAMES.some(x=>x.id===gq)) setTimeout(()=>openGame(gq),2600);
+}catch(e){}
+
 // --- درجه سختی ---
 $$('.diff-btn').forEach(b=>b.onclick=()=>{
   $$('.diff-btn').forEach(x=>x.classList.remove('active'));
