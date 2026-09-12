@@ -1,0 +1,98 @@
+/* ===== سیستم تم: شب / روز / خودکار ===== */
+html[data-font="s"] #app{zoom:.9}
+html[data-font="m"] #app{zoom:1}
+html[data-font="l"] #app{zoom:1.12}
+
+/* ---------- تم روز ---------- */
+html[data-theme="light"]{
+  --bg:#e9edff; --bg2:#dfe6ff; --txt:#18123a; --mut:#5c548a;
+  --card:rgba(255,255,255,.85); --card2:#ffffff;
+}
+html[data-theme="light"] body{color:var(--txt)}
+html[data-theme="light"] .bg-orbs{background:radial-gradient(1200px 800px at 80% -10%,#c7d2fe 0%,#e9edff 55%)}
+html[data-theme="light"] .bg-orbs span{opacity:.35;filter:blur(90px)}
+html[data-theme="light"] .stars{display:none}
+html[data-theme="light"] .topbar{background:linear-gradient(180deg,rgba(233,237,255,.96),rgba(233,237,255,.8))}
+html[data-theme="light"] .logo-title{color:#18123a}
+html[data-theme="light"] .coins{background:linear-gradient(135deg,rgba(251,191,36,.35),rgba(251,191,36,.15));color:#7c4a00}
+html[data-theme="light"] .hero{background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(199,210,254,.5));border-color:rgba(99,102,241,.35)}
+html[data-theme="light"] .hero p{color:#5c548a}
+html[data-theme="light"] .hero-stats div{background:rgba(255,255,255,.8);border-color:rgba(99,102,241,.2)}
+html[data-theme="light"] .hero-stats b{color:#b45309}
+html[data-theme="light"] .hero h1{color:#18123a}
+html[data-theme="light"] .panel{background:rgba(255,255,255,.88);border-color:rgba(99,102,241,.22);box-shadow:0 12px 32px rgba(80,70,180,.16)}
+html[data-theme="light"] .hud .h{background:#eef0ff;border-color:rgba(99,102,241,.18);color:#18123a}
+html[data-theme="light"] .hud .h small{color:#5c548a}
+html[data-theme="light"] .diff-btn{background:#fff;border-color:rgba(99,102,241,.3);color:#33306b}
+html[data-theme="light"] .game-title{color:#18123a}
+html[data-theme="light"] .icon-btn{background:#fff;border-color:rgba(99,102,241,.3);color:#33306b}
+html[data-theme="light"] .btn-ghost{background:#eef0ff;border-color:rgba(99,102,241,.3);color:#33306b}
+html[data-theme="light"] .daily-box{background:linear-gradient(135deg,rgba(251,191,36,.3),rgba(255,255,255,.6))}
+html[data-theme="light"] .daily-txt b{color:#7c4a00}
+html[data-theme="light"] .foot{color:#5c548a}
+html[data-theme="light"] .bottomnav{background:rgba(255,255,255,.94);border-top-color:rgba(99,102,241,.2)}
+html[data-theme="light"] .bn-item{color:#8a84b8}
+html[data-theme="light"] .bn-item.active{color:#4f46e5;background:rgba(99,102,241,.12)}
+html[data-theme="light"] .modal{background:linear-gradient(160deg,#ffffff,#eef1ff);border-color:rgba(99,102,241,.4)}
+html[data-theme="light"] .modal-head{color:#18123a}
+html[data-theme="light"] .modal-body{color:#3f3a6e}
+html[data-theme="light"] .modal-body b{color:#b45309}
+html[data-theme="light"] .modal-body .lv{background:rgba(99,102,241,.08)}
+html[data-theme="light"] #end-title{color:#18123a}
+html[data-theme="light"] .rank-row{background:rgba(99,102,241,.08);color:#33306b}
+html[data-theme="light"] .toast{background:rgba(24,18,58,.92)}
+/* حافظه */
+html[data-theme="light"] .tile .front{background:linear-gradient(135deg,#6d28d9,#8b5cf6)}
+/* سودوکو */
+html[data-theme="light"] .sud-grid{background:rgba(99,102,241,.2)}
+html[data-theme="light"] .sud-cell{background:#fff;color:#18123a}
+html[data-theme="light"] .sud-cell.given{color:#4f46e5}
+html[data-theme="light"] .sud-cell.rel{background:#e8eaff!important}
+html[data-theme="light"] .sud-cell.same{background:rgba(124,58,237,.3)!important}
+html[data-theme="light"] .num-pad button{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.4);color:#33306b}
+/* مین‌روب */
+html[data-theme="light"] .mcell{background:linear-gradient(145deg,#ffffff,#e2e6fb);color:#18123a;box-shadow:0 2px 6px rgba(80,70,180,.15)}
+html[data-theme="light"] .mcell.open{background:#e3e7fa;box-shadow:inset 0 2px 6px rgba(80,70,180,.2)}
+html[data-theme="light"] .mode-toggle{background:#eef0ff;border-color:rgba(99,102,241,.2)}
+html[data-theme="light"] .mode-toggle button{color:#5c548a}
+html[data-theme="light"] .mode-toggle button.on{color:#fff}
+/* سنگ کاغذ قیچی */
+html[data-theme="light"] .rps-score div{background:#eef0ff;border-color:rgba(99,102,241,.18);color:#18123a}
+html[data-theme="light"] .rps-choices button{background:#fff;border-color:rgba(99,102,241,.3)}
+html[data-theme="light"] .rps-choices button small{color:#33306b}
+html[data-theme="light"] .rps-hand small{color:#5c548a}
+html[data-theme="light"] .rps-result{color:#18123a}
+/* منچ */
+html[data-theme="light"] .ludo-board{background:radial-gradient(circle at 50% 50%,rgba(99,102,241,.12),rgba(255,255,255,.6))}
+html[data-theme="light"] .ludo-cell{background:rgba(255,255,255,.9);border-color:rgba(99,102,241,.3)}
+html[data-theme="light"] .ludo-msg{color:#b45309}
+html[data-theme="light"] .lp{background:#fff;color:#33306b;border-color:rgba(99,102,241,.25)}
+/* شطرنج */
+html[data-theme="light"]{--sqL:#f0d9b5;--sqD:#b58863}
+html[data-theme="dark"]{--sqL:#dfe4fb;--sqD:#5b5bd6}
+
+/* ---------- انیمیشن‌های نرم منو ---------- */
+.screen{animation:scrIn .38s cubic-bezier(.22,1,.36,1)}
+@keyframes scrIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.bn-item{transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative}
+.bn-item:active{transform:scale(.88)}
+.bn-item.active span{animation:bnPop .35s cubic-bezier(.34,1.8,.64,1)}
+@keyframes bnPop{0%{transform:scale(.4)}100%{transform:scale(1)}}
+body.ready .games-grid .gcard{opacity:0;animation:cardIn .5s cubic-bezier(.22,1,.36,1) forwards}
+body.ready .games-grid .gcard:nth-child(1){animation-delay:.05s}body.ready .games-grid .gcard:nth-child(2){animation-delay:.12s}
+body.ready .games-grid .gcard:nth-child(3){animation-delay:.19s}body.ready .games-grid .gcard:nth-child(4){animation-delay:.26s}
+body.ready .games-grid .gcard:nth-child(5){animation-delay:.33s}body.ready .games-grid .gcard:nth-child(6){animation-delay:.4s}
+@keyframes cardIn{from{opacity:0;transform:translateY(26px) scale(.92)}to{opacity:1;transform:none}}
+.gcard{transition:transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
+.gcard:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.btn{transition:transform .12s cubic-bezier(.34,1.56,.64,1),filter .15s,box-shadow .2s}
+.btn:hover{filter:brightness(1.1)}
+.modal-wrap.show .modal{animation:mIn .35s cubic-bezier(.22,1.2,.36,1)}
+@keyframes mIn{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:none}}
+.hero{animation:heroIn .5s cubic-bezier(.22,1,.36,1)}
+@keyframes heroIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+/* درخشش بنر */
+.gimg{position:relative;overflow:hidden}
+.gimg::after{content:'';position:absolute;top:0;bottom:0;width:45%;left:-60%;transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}

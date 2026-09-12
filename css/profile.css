@@ -1,0 +1,83 @@
+/* ===== پروفایل حرفه‌ای ===== */
+.pf-cover{position:relative;border-radius:26px;overflow:hidden;padding:24px 18px 20px;text-align:center;
+  background:linear-gradient(145deg,#3b1470,#1b0f3f 55%,#0b2a4a);border:1px solid rgba(139,92,246,.5);
+  box-shadow:0 16px 44px rgba(0,0,0,.5)}
+.pf-cover::before{content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:18px 18px;pointer-events:none}
+.pf-cover::after{content:'';position:absolute;top:-70px;left:50%;transform:translateX(-50%);width:280px;height:150px;
+  background:radial-gradient(ellipse,rgba(139,92,246,.55),transparent);pointer-events:none}
+.pf-cover>*{position:relative;z-index:1}
+.pf-ring{width:108px;height:108px;margin:0 auto;position:relative}
+.pf-ring svg{transform:rotate(-90deg);width:100%;height:100%}
+.ring-bg{fill:none;stroke:rgba(255,255,255,.15);stroke-width:8}
+.ring-fg{fill:none;stroke:url(#pfGrad);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.22,1,.36,1);
+  filter:drop-shadow(0 0 6px rgba(251,191,36,.7))}
+.pf-ava{position:absolute;inset:13px;border-radius:50%;display:grid;place-items:center;font-size:36px;font-weight:900;color:#fff;
+  border:2px solid rgba(255,255,255,.4);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.pf-lv{position:absolute;bottom:-4px;right:50%;transform:translateX(50%);background:linear-gradient(135deg,#f59e0b,#fbbf24);
+  color:#3b2500;font-size:11px;font-weight:900;padding:3px 14px;border-radius:99px;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(251,191,36,.5);border:2px solid #1b0f3f}
+.pf-name{font-size:21px;font-weight:900;margin-top:14px;color:#fff}
+.pf-user{font-size:12px;color:#c9bdf5;margin-top:2px}
+.pf-rank{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 16px;border-radius:99px;
+  font-size:12px;font-weight:800;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff}
+.pf-xp{margin-top:14px;text-align:right}
+.pf-xp small{font-size:11px;color:#c9bdf5}
+.pf-xpbar{height:10px;background:rgba(0,0,0,.4);border-radius:99px;margin-top:6px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+.pf-xpbar i{display:block;height:100%;background:linear-gradient(90deg,#fbbf24,#f472b6,#8b5cf6);border-radius:99px;
+  box-shadow:0 0 12px rgba(251,191,36,.6);transition:width .8s cubic-bezier(.22,1,.36,1)}
+.pf-btns{display:flex;gap:8px;margin-top:14px}
+.pf-btns .btn{flex:1;padding:11px 4px;font-size:12.5px}
+.pf-sec{margin-top:18px;animation:scrIn .45s both}
+.pf-sec-t{display:flex;justify-content:space-between;align-items:center;margin:0 2px 10px;font-weight:900;font-size:14px}
+.pf-sec-t small{font-weight:500;font-size:11px;color:var(--mut)}
+.pf-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pf-stat{background:var(--card);border:1px solid rgba(139,92,246,.3);border-radius:18px;padding:13px 2px;text-align:center;
+  box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+.pf-stat .ic{color:#a78bfa}
+.pf-stat b{display:block;font-size:16px;margin-top:5px}
+.pf-stat small{font-size:9.5px;color:var(--mut)}
+.pf-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.bdg{background:var(--card);border:1px solid rgba(139,92,246,.28);border-radius:18px;padding:12px 2px;text-align:center;
+  box-shadow:var(--shadow)}
+.bdg .b-ic{width:44px;height:44px;margin:0 auto 7px;border-radius:15px;display:grid;place-items:center}
+.bdg.ok .b-ic{background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#fff;box-shadow:0 6px 16px rgba(139,92,246,.5)}
+.bdg.ok{border-color:rgba(139,92,246,.55)}
+.bdg.lock{opacity:.6}
+.bdg.lock .b-ic{background:rgba(255,255,255,.07);color:#8a84b8;border:1px dashed rgba(255,255,255,.2)}
+.bdg b{font-size:10.5px;display:block}
+.bdg small{font-size:9px;color:var(--mut)}
+.pf-chart{display:flex;gap:6px;height:132px;background:var(--card);border:1px solid rgba(139,92,246,.3);
+  border-radius:20px;padding:26px 12px 10px;box-shadow:var(--shadow)}
+.ch-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;height:100%}
+.ch-bar{width:100%;max-width:32px;border-radius:8px;background:rgba(139,92,246,.3);min-height:7px;position:relative;
+  transition:height .6s cubic-bezier(.22,1,.36,1)}
+.ch-bar span{position:absolute;top:-19px;right:50%;transform:translateX(50%);font-size:10px;font-weight:800;color:var(--mut)}
+.ch-bar.today{background:linear-gradient(180deg,#f472b6,#8b5cf6);box-shadow:0 0 14px rgba(139,92,246,.65)}
+.ch-bar.today span{color:#f472b6}
+.ch-col small{font-size:9px;color:var(--mut)}
+.hf-chips{display:flex;gap:6px;margin-bottom:10px}
+.hf{border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:7px 15px;font-size:11px;font-weight:800;
+  background:rgba(255,255,255,.06);color:var(--mut);cursor:pointer;font-family:inherit;transition:all .2s}
+.hf.on{background:linear-gradient(135deg,#8b5cf6,#6366f1);color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px rgba(139,92,246,.5)}
+/* تم روز */
+html[data-theme="light"] .pf-stat,html[data-theme="light"] .bdg,html[data-theme="light"] .pf-chart{background:rgba(255,255,255,.9)}
+html[data-theme="light"] .pf-stat .ic{color:#4f46e5}
+html[data-theme="light"] .bdg.lock .b-ic{background:#eef0ff;color:#a5a0cc;border-color:#d5d0f0}
+html[data-theme="light"] .ch-bar{background:rgba(99,102,241,.25)}
+html[data-theme="light"] .hf{background:#fff;border-color:rgba(99,102,241,.25)}
+html[data-theme="light"] .hf.on{color:#fff}
+html[data-theme="light"] .pf-sec-t{color:#18123a}
+/* گرید انتخاب آواتار */
+.ava-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.ava-pick{aspect-ratio:1;border-radius:50%;overflow:hidden;cursor:pointer;border:3px solid transparent;
+  transition:all .2s;padding:0;background:rgba(255,255,255,.06)}
+.ava-pick img{width:100%;height:100%;object-fit:cover;display:block}
+.ava-pick.on{border-color:#8b5cf6;transform:scale(1.07);box-shadow:0 0 16px rgba(139,92,246,.65)}
+.ava-pick:active{transform:scale(.93)}
+.ava-gal{border:2px dashed rgba(139,92,246,.65);background:rgba(139,92,246,.1);color:#a78bfa;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font-family:inherit}
+.ava-gal b{font-size:24px;line-height:1}
+.ava-gal span{font-size:9px;font-weight:800}
+.pf-ava img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}

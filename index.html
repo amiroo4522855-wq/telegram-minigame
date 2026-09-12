@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark" data-font="m">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0620">
+<title>مینی‌گیم خفن | شهربازی تلگرامی</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/screens.css">
+<link rel="stylesheet" href="css/chess.css">
+<link rel="stylesheet" href="css/icons.css">
+<link rel="stylesheet" href="css/splash.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/games2.css">
+<link rel="stylesheet" href="css/games3.css">
+<link rel="stylesheet" href="css/hub.css">
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span><span></span><span></span></div>
+<div class="stars" id="stars"></div>
+
+<!-- صفحه ورود سینمایی -->
+<div id="splash">
+  <div class="sp-aurora"><span></span><span></span><span></span></div>
+  <div class="sp-particles" id="sp-particles"></div>
+  <div class="sp-inner">
+    <div class="sp-logo-wrap"><div class="sp-ring"></div><img class="sp-logo" src="images/logo.jpg" alt="logo"></div>
+    <div class="sp-title">مینی‌گیم <b>خفن</b></div>
+    <div class="sp-tag">شهربازی جیبی تو 🎮</div>
+    <div class="sp-bar"><i id="sp-fill"></i></div>
+    <div class="sp-row"><span id="sp-tip"></span><b id="sp-pct">۰٪</b></div>
+    <div class="sp-load">در حال آماده‌سازی بازی‌ها…</div>
+  </div>
+  <div class="sp-ver">نسخه ۲٫۲</div>
+</div>
+
+<div id="app">
+  <header class="topbar">
+    <div class="logo">
+      <img class="logo-img" src="images/logo.jpg" alt="logo" onerror="this.outerHTML='<div class=\'logo-cube\'>🎮</div>'">
+      <div>
+        <div class="logo-title">مینی‌گیم <b>خفن</b></div>
+        <div class="logo-sub" id="user-label">مهمان</div>
+      </div>
+    </div>
+    <div class="coins" id="coins-chip"><span data-ic="coin" data-sz="18"></span><b id="coins-val">0</b></div>
+  </header>
+
+  <!-- ===== بازی‌ها ===== -->
+  <main id="screen-home" class="screen active">
+    <section class="hero">
+      <div class="hero-badge"><span data-ic="bolt" data-sz="14"></span> ۱۸ بازی • بدون نصب • تلگرامی</div>
+      <h1>یه شهربازی توی <span class="grad">جیبت!</span></h1>
+      <p>رکورد بزن، سکه جمع کن، ماموریت انجام بده و استاد بازی‌ها شو!</p>
+      <div class="hero-stats">
+        <div><b id="stat-played">0</b><small>بازی</small></div>
+        <div><b id="stat-wins">0</b><small>برد</small></div>
+        <div><b id="stat-level">۱</b><small>سطح</small></div>
+      </div>
+    </section>
+    <div class="sec-head"><b><span data-ic="gamepad" data-sz="20"></span> بازی‌ها</b><small id="games-count"></small></div>
+    <section class="games-grid" id="games-grid"></section>
+    <section class="daily-box">
+      <span class="d-ic" data-ic="gift" data-sz="28"></span>
+      <div class="daily-txt">
+        <b>جایزه روزانه</b>
+        <small id="daily-sub">هر روز برگرد و ۵۰ سکه بگیر!</small>
+      </div>
+      <button class="btn btn-gold" id="daily-btn">دریافت</button>
+    </section>
+    <footer class="foot">مینی‌گیم خفن • نسخه ۲٫۱</footer>
+    <div style="height:100px"></div>
+  </main>
+
+  <!-- ===== ماموریت‌ها ===== -->
+  <main id="screen-missions" class="screen">
+    <section class="page-head">
+      <h2><span data-ic="target" data-sz="24"></span> ماموریت‌های روزانه</h2>
+      <p id="missions-sub">هر روز ماموریت‌ها تازه می‌شن!</p>
+    </section>
+    <div id="missions-list"></div>
+    <div style="height:100px"></div>
+  </main>
+
+  <!-- ===== حساب من ===== -->
+  <main id="screen-profile" class="screen">
+    <div id="profile-box"></div>
+    <div class="sec-head"><b><span data-ic="history" data-sz="20"></span> تاریخچه بازی‌ها</b></div>
+    <div id="history-list"></div>
+    <div style="height:100px"></div>
+  </main>
+
+  <!-- ===== تنظیمات ===== -->
+  <main id="screen-settings" class="screen">
+    <section class="page-head"><h2><span data-ic="sliders" data-sz="24"></span> تنظیمات</h2><p>بازی رو دقیقاً همون‌جوری کن که دوست داری!</p></section>
+
+    <div class="set-group">
+      <div class="set-title"><span data-ic="palette" data-sz="20"></span> ظاهر و تم</div>
+      <div class="set-card">
+        <div class="set-row"><span class="r-ic" data-ic="moon" data-sz="19"></span><div><b>حالت رنگی</b><small>شب، روز یا خودکار (با گوشی)</small></div></div>
+        <div class="seg" id="seg-theme">
+          <button data-v="dark"><span data-ic="moon" data-sz="16"></span> شب</button>
+          <button data-v="light"><span data-ic="sun" data-sz="16"></span> روز</button>
+          <button data-v="auto"><span data-ic="auto" data-sz="16"></span> خودکار</button>
+        </div>
+        <div class="set-row" style="margin-top:14px"><span class="r-ic" data-ic="font" data-sz="19"></span><div><b>اندازه فونت</b><small>متن‌ها رو درشت‌تر یا ریزتر کن</small></div></div>
+        <div class="seg" id="seg-font">
+          <button data-v="s">ریز</button>
+          <button data-v="m">متوسط</button>
+          <button data-v="l">درشت</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="set-group">
+      <div class="set-title"><span data-ic="sound" data-sz="20"></span> صدا و حس</div>
+      <div class="set-card">
+        <div class="set-row"><span class="r-ic" data-ic="sound" data-sz="19"></span><div><b>افکت‌های صوتی</b><small>صدای بازی‌ها</small></div>
+          <label class="switch"><input type="checkbox" id="sw-sound" checked><span></span></label></div>
+        <div class="set-row"><span class="r-ic" data-ic="vibrate" data-sz="19"></span><div><b>لرزش</b><small>ویبره موقع لمس و برد</small></div>
+          <label class="switch"><input type="checkbox" id="sw-haptic" checked><span></span></label></div>
+        <div class="set-row"><span class="r-ic" data-ic="party" data-sz="19"></span><div><b>افکت جشن</b><small>بارش رنگی موقع برد و سکه</small></div>
+          <label class="switch"><input type="checkbox" id="sw-confetti" checked><span></span></label></div>
+      </div>
+    </div>
+
+    <div class="set-group">
+      <div class="set-title"><span data-ic="user" data-sz="20"></span> حساب کاربری</div>
+      <div class="set-card">
+        <div class="set-row"><span class="r-ic" data-ic="user" data-sz="19"></span><div><b>نام نمایشی</b><small>اسمی که توی بازی دیده می‌شه</small></div></div>
+        <div class="name-edit">
+          <input id="inp-name" maxlength="20" placeholder="اسمت رو بنویس...">
+          <button class="btn btn-primary" id="btn-name"><span data-ic="check" data-sz="18"></span></button>
+        </div>
+        <div class="set-row" style="margin-top:12px"><span class="r-ic" data-ic="user" data-sz="19"></span><div><b>عکس پروفایل</b><small>یکی رو انتخاب کن یا از گالری بیار</small></div></div>
+        <div class="ava-grid" id="ava-grid"></div>
+        <input type="file" id="ava-file" accept="image/*" style="display:none">
+      </div>
+    </div>
+
+    <div class="set-group">
+      <div class="set-title"><span data-ic="shield" data-sz="20"></span> داده‌ها و درباره</div>
+      <div class="set-card">
+        <button class="btn btn-red full" id="btn-reset"><span data-ic="trash" data-sz="18"></span> پاک کردن همه داده‌ها</button>
+        <div class="about">مینی‌گیم خفن • نسخه ۲٫۱<br>۶ بازی • آفلاین • مخصوص موبایل</div>
+      </div>
+    </div>
+    <div style="height:100px"></div>
+  </main>
+
+  <!-- ===== بیشتر (هاب) ===== -->
+  <main id="screen-more" class="screen">
+    <div id="more-body"></div>
+  </main>
+
+  <!-- ===== صفحه بازی ===== -->
+  <main id="screen-game" class="screen">
+    <div class="game-toolbar">
+      <button class="icon-btn" id="btn-back"><span data-ic="back" data-sz="20"></span></button>
+      <div class="game-titles">
+        <div class="game-title" id="game-title">بازی</div>
+        <div class="game-sub" id="game-sub">—</div>
+      </div>
+      <button class="icon-btn" id="btn-help"><span data-ic="help" data-sz="20"></span></button>
+    </div>
+    <div class="diff-row" id="diff-row">
+      <button data-diff="easy" class="diff-btn"><span data-ic="bars1" data-sz="17"></span> آسان</button>
+      <button data-diff="medium" class="diff-btn active"><span data-ic="bars2" data-sz="17"></span> متوسط</button>
+      <button data-diff="hard" class="diff-btn"><span data-ic="bars3" data-sz="17"></span> سخت</button>
+    </div>
+    <div id="game-container"></div>
+    <div style="height:100px"></div>
+  </main>
+
+  <nav class="bottomnav">
+    <button class="bn-item active" id="nav-home"><span data-ic="gamepad" data-sz="24"></span><small>بازی‌ها</small></button>
+    <button class="bn-item" id="nav-more"><span data-ic="grid2" data-sz="24"></span><small>بیشتر</small><i class="dot" id="m-dot"></i></button>
+    <button class="bn-item" id="nav-profile"><span data-ic="user" data-sz="24"></span><small>حساب من</small></button>
+    <button class="bn-item" id="nav-settings"><span data-ic="sliders" data-sz="24"></span><small>تنظیمات</small></button>
+  </nav>
+
+  <div class="modal-wrap" id="help-modal">
+    <div class="modal">
+      <div class="modal-head"><b id="help-title">راهنما</b><button class="icon-btn sm" id="help-close"><span data-ic="x" data-sz="15"></span></button></div>
+      <div class="modal-body" id="help-body"></div>
+      <button class="btn btn-primary full" id="help-ok"><span data-ic="check" data-sz="18"></span> فهمیدم، بزن بریم!</button>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="end-modal">
+    <div class="modal center">
+      <div class="end-badge win" id="end-badge"></div>
+      <h2 id="end-title">بردی!</h2>
+      <p id="end-desc"></p>
+      <div class="end-btns">
+        <button class="btn btn-primary" id="end-retry"><span data-ic="refresh" data-sz="17"></span> دوباره</button>
+        <button class="btn btn-ghost" id="end-home"><span data-ic="home" data-sz="17"></span> بازی‌ها</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="confirm-modal">
+    <div class="modal center">
+      <div class="confirm-ic"><span data-ic="warn" data-sz="38"></span></div>
+      <h2 id="confirm-title" style="font-size:18px">مطمئنی؟</h2>
+      <p id="confirm-desc"></p>
+      <div class="end-btns">
+        <button class="btn btn-red" id="confirm-yes">بله</button>
+        <button class="btn btn-ghost" id="confirm-no">نه</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <canvas id="confetti"></canvas>
+</div>
+
+<script src="js/splash.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/common.js"></script>
+<script src="js/memory.js"></script>
+<script src="js/ludo.js"></script>
+<script src="js/sudoku.js"></script>
+<script src="js/mines.js"></script>
+<script src="js/rps.js"></script>
+<script src="js/chess.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/quizbank.js"></script>
+<script src="js/quiz500.js"></script>
+<script src="js/doz.js"></script>
+<script src="js/candy.js"></script>
+<script src="js/snakes.js"></script>
+<script src="js/flags.js"></script>
+<script src="js/flags2.js"></script>
+<script src="js/flags3.js"></script>
+<script src="js/abdolah.js"></script>
+<script src="js/tower.js"></script>
+<script src="js/iceslide.js"></script>
+<script src="js/escape.js"></script>
+<script src="js/ballrun.js"></script>
+<script src="js/dino.js"></script>
+<script src="js/g2048.js"></script>
+<script src="js/hub.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

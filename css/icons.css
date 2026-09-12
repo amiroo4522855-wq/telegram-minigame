@@ -1,0 +1,117 @@
+/* ===== استایل آیکون‌ها + هدر و منوی حرفه‌ای ===== */
+.ic{display:inline-flex;align-items:center;justify-content:center;line-height:0;vertical-align:middle}
+.ic svg{display:block;flex-shrink:0}
+
+/* --- هدر شناور خفن --- */
+.topbar{top:10px;margin:10px 0 0;border-radius:22px;border:1px solid rgba(255,255,255,.14);
+  padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);
+  background:linear-gradient(180deg,rgba(20,12,45,.92),rgba(11,6,32,.85))!important}
+.topbar::after{content:'';position:absolute;top:0;right:18px;left:18px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(139,92,246,.7),rgba(34,211,238,.7),transparent)}
+.coins{cursor:pointer;transition:transform .15s}
+.coins:active{transform:scale(.92)}
+.coins .ic{color:var(--gold)}
+.coins.pop{animation:coinPop .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes coinPop{30%{transform:scale(1.15) rotate(-3deg)}}
+
+/* --- ناوبری شناور --- */
+.bottomnav{bottom:12px;width:calc(100% - 24px);border-radius:24px;border:1px solid rgba(255,255,255,.14)!important;
+  box-shadow:0 14px 40px rgba(0,0,0,.5);padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important}
+.bn-item{border-radius:16px;padding:8px 2px;gap:3px}
+.bn-item .ic{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.bn-item.active{background:linear-gradient(135deg,#8b5cf6,#6366f1);box-shadow:0 6px 18px rgba(139,92,246,.5)}
+.bn-item.active .ic{transform:scale(1.1)}
+.bn-item small{font-size:9.5px}
+.toast{bottom:100px}
+
+/* --- دکمه‌ها با آیکون --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.icon-btn{display:grid;place-items:center;transform:none!important}
+.icon-btn .ic{color:inherit}
+.diff-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.mode-toggle button{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.sud-tools .btn,.row-btns .btn{font-size:12.5px}
+.seg button{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+
+/* --- عنوان‌ها --- */
+.sec-head b,.page-head h2,.set-title{display:inline-flex;align-items:center;gap:8px}
+.sec-head b .ic,.page-head h2 .ic{color:#a78bfa}
+.set-title .ic{color:#8b5cf6}
+.set-row{display:flex;align-items:center;gap:10px}
+.set-row .r-ic{width:36px;height:36px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(34,211,238,.15));border:1px solid rgba(139,92,246,.35);color:#c4b5fd}
+.set-row>div{flex:1}
+.daily-box{gap:12px}
+.d-ic{width:52px;height:52px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;color:#fbbf24;
+  background:linear-gradient(135deg,rgba(251,191,36,.3),rgba(251,191,36,.08));border:1px solid rgba(251,191,36,.45)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px}
+.hero-badge .ic{color:#34d399}
+
+/* --- کارت بازی --- */
+.g-ic{width:36px;height:36px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;color:#fff;
+  background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4)}
+.gname{display:flex;align-items:center;gap:8px}
+.gplay{display:grid!important;place-items:center}
+.best-tag{display:inline-flex;align-items:center;gap:4px}
+.best-tag .ic{color:var(--gold)}
+
+/* --- ماموریت / تاریخچه --- */
+.m-ic{color:#c4b5fd}
+.m-info small{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.h-ic{width:38px;height:38px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;color:#c4b5fd;
+  background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.3)}
+.res-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-left:5px}
+.res-win{background:#34d399;box-shadow:0 0 8px #34d399}
+.res-lose{background:#f87171;box-shadow:0 0 8px #f87171}
+.res-draw{background:#60a5fa;box-shadow:0 0 8px #60a5fa}
+
+/* --- پروفایل --- */
+.p-stats b{display:flex;align-items:center;justify-content:center;gap:5px}
+.p-stats b .ic{color:#a78bfa}
+.p-lv{display:inline-flex;align-items:center;gap:5px}
+.p-lv .ic{color:var(--gold)}
+
+/* --- HUD بازی‌ها --- */
+.hud .h small{display:inline-flex;align-items:center;justify-content:center;gap:4px}
+.hud .h b{display:flex;align-items:center;justify-content:center;gap:6px}
+.hud .h b .ic{color:#a78bfa}
+
+/* --- بج پایان بازی --- */
+.end-badge{width:92px;height:92px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;
+  border:3px solid rgba(255,255,255,.35);box-shadow:0 10px 30px rgba(0,0,0,.4);animation:badgeIn .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes badgeIn{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+.end-badge.win{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#4a2c00;box-shadow:0 10px 34px rgba(251,191,36,.5)}
+.end-badge.lose{background:linear-gradient(135deg,#475569,#1e293b);color:#cbd5e1}
+.end-badge.draw{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff;box-shadow:0 10px 34px rgba(59,130,246,.5)}
+.confirm-ic{width:76px;height:76px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;color:#fbbf24;
+  background:rgba(251,191,36,.12);border:2px solid rgba(251,191,36,.5)}
+
+/* --- منچ --- */
+.cdot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-left:5px;box-shadow:0 0 6px currentColor}
+.dice{color:#1e1b4b}
+.lp{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+
+/* --- شطرنج --- */
+.chess-side .who{display:inline-flex;align-items:center;gap:6px}
+
+/* --- سنگ کاغذ قیچی --- */
+.rps-score .who{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mut);font-weight:700}
+
+/* --- مودال --- */
+.modal-head b{display:inline-flex;align-items:center;gap:8px}
+.modal-head b .ic{color:#a78bfa}
+
+/* --- ترنزیشن نرم تم --- */
+body,.topbar,.panel,.bottomnav,.modal,.set-card,.m-card,.h-row,.hero,.daily-box,.hud .h,.diff-btn,.icon-btn,.btn-ghost,.seg,.seg button,.switch span,.num-pad button,.mcell,.rps-score div,.rps-choices button,.ludo-board,.ludo-cell,.lp,.chess-side,.name-edit input,.p-stats div,.p-card,.h-empty,.about,.toast,.set-row .r-ic,.h-ic,.m-ic,.d-ic{transition:background-color .35s ease,border-color .35s ease,color .35s ease,box-shadow .35s ease}
+
+/* --- تم روز --- */
+html[data-theme="light"] .topbar{background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(238,241,255,.9))!important;
+  border-color:rgba(99,102,241,.25);box-shadow:0 10px 26px rgba(80,70,180,.2)}
+html[data-theme="light"] .bottomnav{background:rgba(255,255,255,.95);border-color:rgba(99,102,241,.25)!important}
+html[data-theme="light"] .bn-item{color:#8a84b8}
+html[data-theme="light"] .bn-item.active{color:#fff}
+html[data-theme="light"] .set-row .r-ic{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);color:#4f46e5}
+html[data-theme="light"] .h-ic,.h-row .h-ic{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3);color:#4f46e5}
+html[data-theme="light"] .m-ic{color:#4f46e5}
+html[data-theme="light"] .hud .h b .ic{color:#4f46e5}
+html[data-theme="light"] .sec-head b .ic,html[data-theme="light"] .page-head h2 .ic,html[data-theme="light"] .modal-head b .ic{color:#4f46e5}
